@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     delete 'itineraries/:id' => 'itineraries#destroy'
 
     post '/users' => 'users#create'
-    post '/sessions' => ''
+    post '/sessions' => 'sessions#create'
+
+    
   end
 end
