@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_18_005833) do
+ActiveRecord::Schema.define(version: 2019_04_18_214057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,12 +33,18 @@ ActiveRecord::Schema.define(version: 2019_04_18_005833) do
     t.string "itinerary_id"
   end
 
+  create_table "images", force: :cascade do |t|
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "itinerary_id"
+  end
+
   create_table "itineraries", force: :cascade do |t|
     t.string "country"
     t.string "name"
     t.text "description"
     t.string "address"
-    t.text "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "category"
@@ -51,6 +57,15 @@ ActiveRecord::Schema.define(version: 2019_04_18_005833) do
     t.string "email"
     t.string "password_digest"
     t.boolean "admin", default: false
+  end
+
+  create_table "wishlist_itineraries", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "itinerary_id"
+    t.string "status"
+    t.integer "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

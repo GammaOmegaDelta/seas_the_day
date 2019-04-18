@@ -5,5 +5,4 @@ json.array! @itineraries.each do |itinerary|
   json.name itinerary.name
   json.description itinerary.description
   json.address itinerary.address
-  json.image_url itinerary.image_url
 end

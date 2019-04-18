@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+ Rails.application.routes.draw do
   namespace :api do
     get '/itineraries' => 'itineraries#index'
     get 'itineraries/:id' => 'itineraries#show'
@@ -8,7 +8,5 @@ Rails.application.routes.draw do
 
     post '/users' => 'users#create'
     post '/sessions' => 'sessions#create'
-
-    
   end
 end
