@@ -1,8 +1,14 @@
 class Api::ItinerariesController < ApplicationController
   def index
-    @itineraries = Itinerary.all
+    if params[:search]
+      @itineraries = Itinerary.where("name LIKE ?", "%#{params[:search]}%")
+    else
+      @itineraries = Itinerary.all
+    end
     render 'index.json.jbuilder'
   end
+    # @itineraries = Itinerary.all
+    # render 'index.json.jbuilder'
 
   def show
     the_id = params[:id]
@@ -18,8 +24,11 @@ class Api::ItinerariesController < ApplicationController
       description: params[:description],
       address: params[:address]
       )
-    @itinerary.save
-    render 'show.json.jbuilder'
+    if @itinerary.save
+      render 'show.json.jbuilder'
+    else
+      render 'errors.json.jbuilder', status: :unprocessible_entity
+    end
   end
 
   def update
@@ -32,7 +41,11 @@ class Api::ItinerariesController < ApplicationController
       description: params[:description],
       address: params[:address]
       )
-    render 'show.json.jbuilder'
+    if @itinerary.save
+      render 'show.json.jbuilder'
+    else
+      render 'errors.json.jbuilder'
+    end
   end
 
   def destroy
