@@ -11,5 +11,9 @@ Rails.application.routes.draw do
 
     post '/activities' => 'activities#create'
     get '/activities' => 'activities#index'
+
+    post '/wishlist_itineraries' => 'wishlist_itineraries#create'
+    get '/wishlist_itineraries' => 'wishlist_itineraries#index'
+    delete '/wishlist_itineraries' => 'wishlist_itineraries#destroy'
   end
 end
