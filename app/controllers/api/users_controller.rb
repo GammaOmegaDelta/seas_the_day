@@ -6,7 +6,6 @@ class Api::UsersController < ApplicationController
       password: params[:password],
       password_confirmation: params[:password_confirmation]
       )
-    
     if user.save
       render json: {message: "Account has been made successfully"}, status: :created
     else

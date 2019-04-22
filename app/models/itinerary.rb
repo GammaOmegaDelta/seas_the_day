@@ -3,6 +3,7 @@ class Itinerary < ApplicationRecord
   has_many :categories, through: :category_itineraries
   has_many :images
   has_many :wishlist_itineraries
+  has_many :activities
 
   validates :name, presence: true
   validates :name, uniqueness: true
