@@ -1,16 +1,11 @@
 koh samui, koh phangan, ao nang, koh lanta, bangkok, siem reap, kampot, koh rong samloem, phnom penh, ho chi minh saigon, phu quoc, da lat, nha trang, hoi an, phong nha, ninh binh, hanoi, halong bay, cat ba island, sa pa, vientiane, 4000 islands, pakse, vang vieng, phonsavan, luang prabang, pakbeng
 
---Follow Up 4/17--
-**Activites controller needs data**
-
-Made associations between category, itinerary, category_itinerary. Next step? Possibly make associations with WISHLIST. Make routes and views for activities followed by wishist, may wanna hold off on the associations between wishlist until routes and views are made. Will an Image model be necessary? If so, it will belong_to :itinerary under the Image model and has_many :images under the Itinerary model. Will the Itinerary model also need validations?? eg. validates :name, presence: true and so on?? 
-
-
+--Follow Up 4/23--
 
 --Postpone status will be an update action, make sure to add into activities controller and make sure it works before making the postpone/update action.---
 
---Thailand??---
-
 ~-~-~-Itineraries with html?(See mini_capstone)~-~-~-
 
----Should Itinerary be switched to activity and voce versa to make more sense?
+API, which one to use? Need to make controller def index with response = HTTP.get(api) followed by render json: response.parse, will need to install get 'http' in gemfile.[video #29] hide api key by going to your profile within the api site and regenerate/get another api key. ---API Key storage cheat sheet to hide api key---
+
+for HTML rails g controller itineraries, make folder within views and route will be outside the namespace. That folder will need a new file: index.html.erb
