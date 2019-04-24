@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+    
+
+    
+  get '/itineraries/new' => 'itineraries#new'
+  post '/itineraries' => 'itineraries#create'
   namespace :api do
     get '/itineraries' => 'itineraries#index'
     get 'itineraries/:id' => 'itineraries#show'
