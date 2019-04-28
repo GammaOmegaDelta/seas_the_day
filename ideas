@@ -12,7 +12,9 @@ for HTML rails g controller itineraries, make folder within views and route will
 
 
 ---4/28---
-Worked on Vue. Finished up getting rid of 'photo' in edit. need to replace everything with corresponding data. After vue, make sure it works. Home route to be index?
+Worked on Vue. Finished up getting rid of 'photo' in edit. need to replace everything with corresponding data. After vue, make sure it works. Home route to be index? 
+
+update: fixed show action on vue. left off working on edit action. make sure all routes work how they are intended too. If so, plssibly more front end customization.
 
 
 --show path for vue--
