@@ -4,3 +4,4 @@ json.category @itinerary.category
 json.name @itinerary.name
 json.description @itinerary.description
 json.address @itinerary.address
+json.images @itinerary.images
