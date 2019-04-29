@@ -44,7 +44,7 @@ class Api::ItinerariesController < ApplicationController
     if @itinerary.save
       render 'show.json.jbuilder'
     else
-      render 'errors.json.jbuilder'
+      render json: { errors: @itinerary.errors.full_messages }, status: :bad_request
     end
   end
 
