@@ -3,4 +3,4 @@ json.country @activity.country
 json.name @activity.name
 json.description @activity.description
 json.address @activity.address
-json.images @activity.images
+json.image_url @activity.image_url
