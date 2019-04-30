@@ -2,7 +2,7 @@ class Activity < ApplicationRecord
   # has_many :category_itineraries
   # has_many :categories, through: :category_itineraries
   has_many :images
-  has_many :activity_itineraries
+  has_many :activity_users
 
   # validates :name, presence: true
   # validates :name, uniqueness: true
