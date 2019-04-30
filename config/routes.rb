@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-    
-
-    
+ 
   get '/activities/new' => 'activities#new'
   post '/activities' => 'activities#create'
   namespace :api do

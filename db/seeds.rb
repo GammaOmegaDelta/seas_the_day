@@ -112,13 +112,13 @@ Activity.create({country: "Japan", name: "Ichiran Ramen", description: "Ichiran 
 
 Activity.create({country: "Japan", name: "Okonomiyaki Kiji", description: "The Okonomiyaki restaurant called Kiji is extremely well-known and well-loved in Osaka. It's one of the best in the city, serving okonomiyaki (Japanese savory pancake), Osaka's most popular cuisine. The same great authentic okonomiyaki cuisine is also available in Tokyo at two locations! This article will present the original Osaka location as well as the two newer locations in Tokyo.", address: "Japan, 〒100-0005 Tokyo, Chiyoda City, Marunouchi, 2 Chome−7−３ 東京ビルTOKIA B-1F", image_url: "https://media-cdn.tripadvisor.com/media/photo-s/08/d0/58/40/kiji-sky.jpg"})
 
-Activity.create({country: "Japan", name: "Ramen Museum", description: "The Shinyokohama Raumen Museum (新横浜ラーメン博物館, Shin Yokohama Ra-men Hakubutsukan) is a unique museum about ramen, a very popular Japanese noodle dish which was originally introduced from China. In a gallery on the first floor, the Ramen Museum presents the history of ramen noodles in Japan, including the big success of instant ramen. It displays the variety of noodles, soups, toppings and bowls used across Japan, and shows how the noodles are made. On the two basement floors, visitors can explore a 1:1 replica of some streets and houses of Shitamachi, the old town of Tokyo, of around the year 1958, when the popularity of ramen was rapidly increasing. Nine ramen restaurants can be found there, each featuring a ramen dish from a different region of Japan. For visitors who wish to try multiple ramen dishes, every store offers mini ramen, a small portion of the feature dish. Tickets for the meals are purchased at vending machines in front of each stores before entering.", address: "2 Chome-14-21 Shinyokohama, Kōhoku-ku, Yokohama-shi, Kanagawa-ken 222-0033, Japan", image_url: "http://awoisoak.com/wp-content/uploads/2016/10/dsc00533_lzn_resized.jpg"})
+Activity.create!({country: "Japan", name: "Ramen Museum", description: "The Shinyokohama Raumen Museum (新横浜ラーメン博物館, Shin Yokohama Ra-men Hakubutsukan) is a unique museum about ramen, a very popular Japanese noodle dish which was originally introduced from China. In a gallery on the first floor, the Ramen Museum presents the history of ramen noodles in Japan, including the big success of instant ramen. It displays the variety of noodles, soups, toppings and bowls used across Japan, and shows how the noodles are made. On the two basement floors, visitors can explore a 1:1 replica of some streets and houses of Shitamachi, the old town of Tokyo, of around the year 1958, when the popularity of ramen was rapidly increasing. Nine ramen restaurants can be found there, each featuring a ramen dish from a different region of Japan. For visitors who wish to try multiple ramen dishes, every store offers mini ramen, a small portion of the feature dish. Tickets for the meals are purchased at vending machines in front of each stores before entering.", address: "2 Chome-14-21 Shinyokohama, Kōhoku-ku, Yokohama-shi, Kanagawa-ken 222-0033, Japan", image_url: "http://awoisoak.com/wp-content/uploads/2016/10/dsc00533_lzn_resized.jpg"})
 
-activities = Activity.all
+# activities = Activity.all
 
-activities.each do |activity|
-  Image.create!(
-    url: activity.image_url,
-    itinerary_id: activity.id
-  )
-end
+# activities.each do |activity|
+#   Image.create!(
+#     url: activity.image_url,
+#     activity_id: activity.id
+#   )
+# end

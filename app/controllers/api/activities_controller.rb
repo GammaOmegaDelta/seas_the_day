@@ -35,7 +35,6 @@ class Api::ActivitiesController < ApplicationController
     @activity = Activity.find_by(id: the_id)
     @activity.update(
       country: params[:country],
-      category: params[:category],
       name: params[:name],
       description: params[:description],
       address: params[:address]

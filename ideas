@@ -20,3 +20,5 @@ update: fixed show action on vue. left off working on edit action. make sure all
 
 ---4/29---
 made some turn arounds. Switched from itineraries to activities. Not sure about itineraries_controller and what goes in it. as well as activityu_itineraries if it needs a controller and that of the such. Need to switch everything in vue once backend works properly.
+
+fix images to show up. run server and local host to see what we mean
