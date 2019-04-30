@@ -1,31 +1,56 @@
 class Api::ActivitiesController < ApplicationController
-  before_action :authenticate_user
-
   def index
-    @activities = current_user.activities
+    if params[:search]
+      @activities = Activity.where("name LIKE ?", "%#{params[:search]}%")
+    else
+      @activities = Activity.all
+    end
     render 'index.json.jbuilder'
   end
+    # @itineraries = Itinerary.all
+    # render 'index.json.jbuilder'
 
-  def create
-    wishlist_itineraries = current_user.wishlist_itineraries
-    wishlist_itineraries = wishlist_itineraries.where(status: 'Added')
-
-    @activity = activity.new(
-      user_id: current_user.id,
-      itinerary_id: params[:itinerary_id]
-      )
-    @activity.save
-
-    wishlist_itineraries.each do |wishlist_itinerary|
-      wishlist_itinerary.activity_id = @activity.id
-      wishlist_itinerary.status = 'Completed'
-      wishlist_itinerary.save
-    end
+  def show
+    the_id = params[:id]
+    @activity = Activity.find_by(id: the_id)
     render 'show.json.jbuilder'
   end
 
-  def show
-    @activity = activity.find_by(id params[:id])
+  def create
+    @activity = Activity.new(
+      country: params[:country],
+      name: params[:name],
+      description: params[:description],
+      address: params[:address]
+      )
+    if @activity.save
+      render 'show.json.jbuilder'
+    else
+      render 'errors.json.jbuilder', status: :unprocessible_entity
+    end
+  end
+
+  def update
+    the_id = params[:id]
+    @activity = Activity.find_by(id: the_id)
+    @activity.update(
+      country: params[:country],
+      category: params[:category],
+      name: params[:name],
+      description: params[:description],
+      address: params[:address]
+      )
+    if @activity.save
+      render 'show.json.jbuilder'
+    else
+      render json: { errors: @activity.errors.full_messages }, status: :bad_request
+    end
+  end
+
+  def destroy
+    the_id = params[:id]
+    @activity = Activity.find_by(id: the_id)
+    @activity.destroy
     render 'show.json.jbuilder'
   end
 end

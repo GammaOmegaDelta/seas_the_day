@@ -2,20 +2,20 @@ Rails.application.routes.draw do
     
 
     
-  get '/itineraries/new' => 'itineraries#new'
-  post '/itineraries' => 'itineraries#create'
+  get '/activities/new' => 'activities#new'
+  post '/activities' => 'activities#create'
   namespace :api do
-    get '/itineraries' => 'itineraries#index'
-    get 'itineraries/:id' => 'itineraries#show'
-    post '/itineraries' => 'itineraries#create'
-    patch '/itineraries/:id' => 'itineraries#update'
-    delete 'itineraries/:id' => 'itineraries#destroy'
+    get '/activities' => 'activities#index'
+    get 'activities/:id' => 'activities#show'
+    post '/activities' => 'activities#create'
+    patch '/activities/:id' => 'activities#update'
+    delete 'activities/:id' => 'activities#destroy'
 
     post '/users' => 'users#create'
     post '/sessions' => 'sessions#create'
 
-    post '/activities' => 'activities#create'
-    get '/activities' => 'activities#index'
+    post '/itineraries' => 'itineraries#create'
+    get '/itineraries' => 'itineraries#index'
 
     post '/wishlist_itineraries' => 'wishlist_itineraries#create'
     get '/wishlist_itineraries' => 'wishlist_itineraries#index'

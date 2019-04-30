@@ -1,57 +1,33 @@
 class Api::ItinerariesController < ApplicationController
-  def index
-    if params[:search]
-      @itineraries = Itinerary.where("name LIKE ?", "%#{params[:search]}%")
-    else
-      @itineraries = Itinerary.all
-    end
-    render 'index.json.jbuilder'
-  end
-    # @itineraries = Itinerary.all
-    # render 'index.json.jbuilder'
+  before_action :authenticate_user
 
-  def show
-    the_id = params[:id]
-    @itinerary = Itinerary.find_by(id: the_id)
-    render 'show.json.jbuilder'
+  def index
+    @itineraries = current_user.itineraries
+    render 'index.json.jbuilder'
   end
 
   def create
-    @itinerary = Itinerary.new(
-      country: params[:country],
-      category: params[:category],
-      name: params[:name],
-      description: params[:description],
-      address: params[:address]
+    wishlist_itineraries = current_user.wishlist_itineraries
+    wishlist_itineraries = wishlist_itineraries.where(status: 'Added')
+
+    @activity = activity.new(
+      user_id: current_user.id,
+      itinerary_id: params[:itinerary_id]
       )
-    if @itinerary.save
-      render 'show.json.jbuilder'
-    else
-      render 'errors.json.jbuilder', status: :unprocessible_entity
+    @itinerary.save
+
+    wishlist_itineraries.each do |wishlist_itinerary|
+      wishlist_itinerary.activity_id = @activity.id
+      wishlist_itinerary.status = 'Completed'
+      wishlist_itinerary.save
     end
+    render 'show.json.jbuilder'
   end
 
-  def update
-    the_id = params[:id]
-    @itinerary = Itinerary.find_by(id: the_id)
-    @itinerary.update(
-      country: params[:country],
-      category: params[:category],
-      name: params[:name],
-      description: params[:description],
-      address: params[:address]
-      )
-    if @itinerary.save
-      render 'show.json.jbuilder'
-    else
-      render json: { errors: @itinerary.errors.full_messages }, status: :bad_request
-    end
-  end
-
-  def destroy
-    the_id = params[:id]
-    @itinerary = Itinerary.find_by(id: the_id)
-    @itinerary.destroy
+  def show
+    @itinerary = itinerary.find_by(id params[:id])
     render 'show.json.jbuilder'
   end
 end
+
+# needs adjustment to correspond to activities.

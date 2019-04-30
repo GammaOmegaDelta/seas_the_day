@@ -1,3 +1,6 @@
 json.id @activity.id
-json.user_id @activity.user_id
-json.itinerary_id @activity.itinerary_id
+json.country @activity.country
+json.name @activity.name
+json.description @activity.description
+json.address @activity.address
+json.images @activity.images
