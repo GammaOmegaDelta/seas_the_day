@@ -1,4 +1,6 @@
 class Api::ActivitiesController < ApplicationController
+  before_action :authenticate_admin, except: [:index, :show]
+
   def index
     if params[:search]
       @activities = Activity.where("name LIKE ?", "%#{params[:search]}%")
