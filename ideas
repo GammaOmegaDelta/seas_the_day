@@ -23,5 +23,14 @@ made some turn arounds. Switched from itineraries to activities. Not sure about 
 
 fix images to show up. run server and local host to see what we mean
 
----4/30---
-do we need New in vue or just activity_user.show to show current_user and thier itinerary? Still having issues with images showing up. 
+---4/30--- 
+****<-- Need to make admin to be the only one editing/deleting activities. Figure out how a user can delete an activity and edit it rather than the whole activity itself within the itinerary. Go to localhost:8080/activityusers/2/edit  -->****
+
+
+
+***TO-DO/Questions***
+- How to get a current user's itinerary(full of activities they chose)to show up? ActivityUsersIndex??
+-How can a user delete one single activity within their itinerary?
+-How can a user make a new itinerary list to choose items from rather than entering manually? Admin issue?
+-Should a router link for your itinerary be made to be on the top? Home|login|your itinerary|
+-change home.vue to what we had in our old app with css?? what was home.vue treat it as show/index ti see all itineraries?
