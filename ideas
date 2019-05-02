@@ -31,6 +31,10 @@ fix images to show up. run server and local host to see what we mean
 ***TO-DO/Questions***
 - How to get a current user's itinerary(full of activities they chose)to show up? ActivityUsersIndex??
 -How can a user delete one single activity within their itinerary?
--How can a user make a new itinerary list to choose items from rather than entering manually? Admin issue?
+
+-How can a user make a new itinerary list to choose items from rather than entering manually?
+  -side note: new itinerary needs to be adjusted to be able to pick activities from home and add them to user's itineraries.
+
 -Should a router link for your itinerary be made to be on the top? Home|login|your itinerary|
+
 -change home.vue to what we had in our old app with css?? what was home.vue treat it as show/index ti see all itineraries?
