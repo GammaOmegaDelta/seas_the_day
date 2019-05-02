@@ -3,4 +3,5 @@ json.array! @activity_users.each do |activity_user|
   json.user_id activity_user.user_id
   json.status activity_user.status
   json.activity_id activity_user.activity_id
+  json.activity activity_user.activity
 end
