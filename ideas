@@ -38,3 +38,6 @@ fix images to show up. run server and local host to see what we mean
 -Should a router link for your itinerary be made to be on the top? Home|login|your itinerary|
 
 -change home.vue to what we had in our old app with css?? what was home.vue treat it as show/index ti see all itineraries?
+
+---5/2---
+worked on getting images to show up on activityusersindex. Needs work
