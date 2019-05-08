@@ -17,8 +17,7 @@ class Api::ActivityUsersController < ApplicationController
 
   def destroy
     @activity_user = ActivityUser.find_by(id: params[:id])
-    @activity_user.status = 'Removed'
-    @activity_user.save
+    @activity_user.destroy
     render json: {message: "Activity has been removed"}
   end
 end
