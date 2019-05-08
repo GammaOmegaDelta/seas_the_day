@@ -19,6 +19,6 @@ class Api::ActivityUsersController < ApplicationController
     @activity_user = ActivityUser.find_by(id: params[:id])
     @activity_user.status = 'Removed'
     @activity_user.save
-    render json: {message: "Itinerary has been removed"}
+    render json: {message: "Activity has been removed"}
   end
 end

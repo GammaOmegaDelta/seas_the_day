@@ -17,6 +17,6 @@ Rails.application.routes.draw do
 
     post '/activity_users' => 'activity_users#create'
     get '/activity_users' => 'activity_users#index'
-    delete '/activity_users' => 'activity_users#destroy'
+    delete '/activity_users/:id' => 'activity_users#destroy'
   end
 end

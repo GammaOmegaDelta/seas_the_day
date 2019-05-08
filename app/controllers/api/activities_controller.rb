@@ -1,5 +1,5 @@
 class Api::ActivitiesController < ApplicationController
-  before_action :authenticate_admin, except: [:index, :show]
+  before_action :authenticate_admin, except: [:index, :show, :destroy]
 
   def index
     if params[:search]
